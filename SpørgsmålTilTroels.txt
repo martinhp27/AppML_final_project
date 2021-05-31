@@ -1,0 +1,75 @@
+Spørgsmål til Troels
+
+- Hvad er der i træningssættet? De seks kategorier?
+
+- Testsæt? Hvad er det input vi får?
+
+- Tanker om hvilke typer netværk
+	- YOLO
+	- Pytorch, Keras el. andet?
+	- Klassificering: Aske, pollen, støv eller skal det være helt ned til hvilken type pollen?
+		- Lav et netværk som klassificerer overordnet, og nogle der klassificerer
+		dem der er blevet labelled som pollen f.eks.
+
+- Vælge tid til præsentation? Vi vil gerne vælge 17. juni.
+
+Referat:
+
+Dust: 1, Pollen: 3, Ash: 2
+
+First try to just classify dust, pollen, ash, then we can try subcategories.
+
+Training data sorted by size - most interesting at top.
+
+Dust tells you if it was a dry year or not. Some out of focus.
+
+Take embedding of last fully connected layer (1000 parameter space) and investigate.
+
+Input pictures, send trough CNN, then regular nn, at last you have scores for each of 
+the six categories. Whatever is in the second last layer 10-dimensional? 
+Take that layer and do something? Can you do something in PCA-land?
+
+1. Get A, P, D separated (simple).
+2. Get P1, P2, P3 separated.
+3. Get 6 (DIM) scores for multiclasssification.
+4. Look in the next-to-last layer to make un-supervised learning on the training data (resnet?)
+5. Anomaly detection... put in your own (vacation?) images, and see if it finds them.
+6. Size issue...
+
+Content vs. size diagram. One should probably scale images to same size. 
+Dust particles usually the very small ones. Biggest are vulcanic particles.
+Size information in meta-data (csv file) (column called ABD, units in micro-meters).
+There`s separation already in the size. Another feature ESD - estimate diameter.
+ABD - assume round and find diameter from area.
+Some columns in csv-file not useful (f.eks. time).
+
+Can you determine difference just looking at meta-data? Not looking at images?
+
+Size for cross-check parameter.
+
+Helpful for CNN`s - FiLM (FeaturewIse Linear Modulation).
+
+Not forced to use whole dataset. We can try to run a subset.
+
+Dive into a sub-problem.
+
+Ice-core data - taken from Greenland. From 30.000 years ago. Given by researcher studying vulcanoes.
+There should be no pollen (no vegetation to provide pollen.), most should be ash (or dust?). 
+Pieces of cloth not in training data (elongated).
+
+Send email with all our email adresses to Troels.
+
+Every sample is a few hundred years.
+
+Campanian: Ash (Eruption of Vesuvius, the older much bigger one). Has bubbles.
+Grimsvotn: Ash (Basaltic ash).
+Dust: aluminium oxide (powder).
+Three types of pollen sampled from trees during spring in Portugal, typically found in alps.
+
+Test data will be the same as training but missing the last columns (labels).
+
+
+
+
+
+
