@@ -1,0 +1,16 @@
+Spørgsmål til Troels
+
+- Hvad er der i træningssættet? De seks kategorier?
+
+- Testsæt? Hvad er det input vi får?
+
+- Tanker om hvilke typer netværk
+	- YOLO
+	- Pytorch, Keras el. andet?
+	- Klassificering: Aske, pollen, støv eller skal det være helt ned til hvilken type pollen?
+		- Lav et netværk som klassificerer overordnet, og nogle der klassificerer
+		dem der er blevet labelled som pollen f.eks.
+
+- Vælge tid til præsentation? Vi vil gerne vælge 17. juni
+
+
